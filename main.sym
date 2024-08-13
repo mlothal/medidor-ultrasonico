@@ -1,0 +1,129 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+008     lcdlat
+008     lcd
+008     PSP_DATA
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020-021 distancia
+022-023 tiempo
+024-027 @SFTOI.P1
+024     @PSTRINGCN7_647.P2
+024     lcd_init.i
+024-025 @PRINTF_LU_647.P1
+024-025 @MUL1616.P2
+024     MAIN.@SCRATCH1
+024     @PSTRINGC7_647.@SCRATCH1
+025     lcd_init.@SCRATCH1
+025     MAIN.@SCRATCH2
+025     @PSTRINGC7_647.@SCRATCH2
+025     @PSTRINGCN7_647.@SCRATCH1
+026-027 @MUL1616.P1
+026-027 @ITOF.P2
+026-029 @DIVFF.P3
+026     @PSTRINGC7_647.@SCRATCH3
+026     @PSTRINGCN7_647.@SCRATCH2
+026     @PRINTF_LU_647.@SCRATCH1
+027     @PSTRINGC7_647.@SCRATCH4
+027     @PSTRINGCN7_647.@SCRATCH3
+027     @PRINTF_LU_647.@SCRATCH2
+028     @MUL1616.@SCRATCH1
+028     @PSTRINGCN7_647.@SCRATCH4
+028     @PRINTF_LU_647.@SCRATCH3
+029     @PRINTF_LU_647.@SCRATCH4
+02A-02D @DIVFF.P1
+02A     @PRINTF_LU_647.@SCRATCH5
+02B     @PRINTF_LU_647.@SCRATCH6
+02C     @PRINTF_LU_647.@SCRATCH7
+02D     lcd_putc.c
+02E     lcd_gotoxy.x
+02E     @delay_ms1.P1
+02E     @DIVFF.@SCRATCH1
+02F     lcd_gotoxy.y
+02F     @DIVFF.@SCRATCH2
+030     lcd_gotoxy.address
+030     @DIVFF.@SCRATCH3
+031     lcd_gotoxy.@SCRATCH1
+031     @DIVFF.@SCRATCH4
+032     lcd_send_byte.address
+032     @DIVFF.@SCRATCH5
+033     lcd_send_byte.n
+033     @DIVFF.@SCRATCH6
+034     lcd_read_byte.low
+034     lcd_send_byte.@SCRATCH1
+035     lcd_read_byte.high
+035     lcd_send_nibble.n
+036     lcd_read_byte.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+088     lcdtris
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000008  LCD_INIT_STRING.data
+00000C  @const664.call
+000013  @const666.call
+00001A  @const667.call
+000022  @const678.call
+000031  @delay_ms1
+000046  lcd_send_nibble
+000052  lcd_read_nibble
+000058  lcd_send_byte
+00005E  lcd_read_byte
+000098  lcd_init
+0000CB  lcd_gotoxy
+0000DD  lcd_putc
+000109  @PSTRINGC7_647
+000165  @MUL1616
+00017C  @ITOF
+00019B  @DIVFF
+000267  @SFTOI
+000288  @PSTRINGCN7_647
+0002ED  @PRINTF_LU_647
+000350  MAIN
+000350  @cinit1
+00035A  @cinit2
+
+Project Directory:
+    D:\casst\uC\uC 2016\programas en ccs\medidor de distancia ultrasonico\
+
+Project Files:
+    main.c                                                  [16-mar-17 17:05  CRC=AAC7BA96]
+    C:\Program Files (x86)\PICC\Devices\16f877a.h           [19-jul-13 15:10  CRC=4E65664C]
+    C:\Program Files (x86)\PICC\Drivers\lcd.c               [23-ago-12 09:01  CRC=D28E8746]
+
+Source signature=9E4A2F6E
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA
